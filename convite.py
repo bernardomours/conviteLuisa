@@ -6,21 +6,6 @@ st.set_page_config(
     page_icon="🎀",
     )
 
-
-# st.title("Aniversário da Luísa")
-
-# invite, local, suggestion = st.tabs(["Convite", "Localização", "Sugestão de Presente"])
-# with invite:
-#     st.write("CONVITE")
-    
-# with local:
-#     st.write("LOCAL")
-    
-# with suggestion:
-#     st.write("SUGESTÃO DE PRESENTE")\
-
-
-
 with st.container():
     selected = option_menu(
         menu_title= "CONTAMOS COM SUA PRESENÇA!",
@@ -31,5 +16,5 @@ with st.container():
         orientation="horizontal",  
     )
 
-st.write(f"Você selecionou: {selected}, Bem-vind")
+st.write(f"Você selecionou: {selected}, Bem-vindo(a)")
 
