@@ -1,136 +1,136 @@
 import streamlit as st
-
+import base64
+import os
 
 st.set_page_config(
     page_title="1 Aninho da Luísa",
     page_icon="🎀",
     layout="wide",
+    initial_sidebar_state='collapsed'
 )
 
 # CSS para estilizar o documento
 st.markdown(
     """
     <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
+        .stMainBlockContainer {
+            border: 0px;
+            padding-top: 0px;
+            padding-bottom: 20px; 
+            padding-left: 20px;
+            padding-right: 20px; 
+        }
+        .stVerticalBlock {
+            border : 0px;
+        }
+        .stAppHeader {
+            visibility: hidden;
+            background-color: #ffffff;
+            padding: 0px;
+        }
+        #MainMenu {
+            visibility: hidden;
+        }
 
+        .stHorizontalBlock {
+            background-color: #ffffff;
+            padding: 0.1rem;
+        }
+        .container-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .stHeaderActionElements {
+            visibility: hidden;
+        }
+        .stColumn {
+            border: 0px;
+            padding-top: 0px;
+            padding-bottom: 20px; 
+            padding-left: 20px;
+            padding-right: 20px; 
+        }
+        .stMarkdownContainer {
+            border: 0px;
+            padding-top: 0px;
+            padding-bottom: 20px; 
+            padding-left: 20px;
+            padding-right: 20px;             
+        }
         .block-container { 
-            padding-top: 3rem;
-            padding-left: 0.001rem;
-            padding-right: 0.0001rem; 
+            padding-top: 0px;
+            padding-left: 0rem;
+            padding-right: 0rem; 
         }
         .container1 {
-            background-color: #FFFFFF;
-            padding: 20px;
+            background-color: #ffffff;
+            border: 0px;
         }
         .container2 {
             background-color: #f09db1;
-            padding: 20px;
+            padding-top: 20px;
+            padding-bottom: 40px; 
+            padding-left: 40px;
+            padding-right: 40px; 
         }
         .container3 {
-            background-color: #FFFFFF;
-            padding: 20px;
+            background-color: #ffffff;
+            padding-top: 20px;
+            padding-bottom: 0px; 
+            padding-left: 40px;
+            padding-right: 20px; 
         }
-        .container-content {
-            margin: 0;
+        .container4 {
+            background-color: #ffffff;
+            padding-top: 20px;
+            padding-bottom: 0px; 
+            padding-left: 20px;
+            padding-right: 20px; 
+        }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-## convite
+## CONVITE
 with st.container():
     st.markdown(
         """
         <div class="container1">
-            <h3 lass=\"container-content\" style=\"color: #f09db1;\">
-                CONVITE
-            </h3>
-            <img 
-                src="background.jpg" 
-                width="100%" 
-                height=300px>
-            </img>
-        </div>
+        <div 
+            style="position: 
+            relative; 
+            width: 100%; 
+            height: 0; 
+            border: 0px;
+            padding-top: 36.7188%;
+            padding-bottom: 0; 
+            overflow: hidden;">
+            <iframe 
+                loading="lazy" 
+                style="position: 
+                    absolute; 
+                    width: 100%; 
+                    height: 100%; 
+                    top: 0; 
+                    left: 0; 
+                    border: none; 
+                    padding: 0;
+                    margin: 0;"
+                src="https://www.canva.com/design/DAGaE0fB8mw/FgxiT58lNN_e74-SBD0Bmg/view?embed" >
+            </iframe>
+            </div>
         """, 
         unsafe_allow_html=True
     )
 
-## presentes
-with st.container():
-    st.markdown(
-        """
-        <style>
-            .stHorizontalBlock {background-color: #f09db1;}
-        </style>
-        <div class="container2" style="background-color: #f09db1; padding: 20px;">
-            <h3 class=\"container-content\" style=\"color: white;\">
-                SUGESTÃO DE PRESENTE
-            </h3>
-        </div>
-        """, 
-        unsafe_allow_html=True
-    )
-
-    col1, col2, col3 = st.columns(3, gap='small', vertical_alignment='center', border=True)
-
-    with col1:
-        st.markdown(
-            """
-            <div style="background-color: #f09db1; padding: 10px;">
-                <h4 class=\"container-content\" style=\"color: white;\">
-                    Sapatinhos tamanho 12
-                </h4>
-                <img 
-                src="https://down-br.img.susercontent.com/file/br-11134201-23030-mzaeus8qmdov35" 
-                width="100%" 
-                height="100%">
-                </img>
-            </div>
-            """, 
-            unsafe_allow_html=True
-        )
-
-    with col2:
-        st.markdown(
-            """
-            <div style="background-color: #f09db1; padding: 10px;">
-                <h4 lass=\"container-content\" style=\"color: white;\">
-                    Roupinhas tamanho 18 meses
-                </h4>
-                <img 
-                src="https://img.bestdealplus.com/ae04/kf/Hffe397335f1647d7ad58d2d775e7e2662.jpg" 
-                width="100%" 
-                height="100%">
-                </img>
-            </div>
-            """, 
-            unsafe_allow_html=True
-        )    
-
-    with col3:
-        st.markdown(
-            """
-            <div style="background-color: #f09db1; padding: 10px;">
-                <h4 lass=\"container-content\" style=\"color: white;\">
-                    Brinquedos Educativos
-                </h4>
-                <img 
-                src="https://acdn.mitiendanube.com/stores/001/773/125/products/h4058562874ad403ab036d3c3465c5f7e7-fbd83cad39018ca9d516453684680902-1024-1024.jpg" 
-                width="100%" 
-                height="100%">
-                </img>
-            </div>
-            """, 
-            unsafe_allow_html=True
-        )  
-
-## localizacao
+## LOCALIZAÇÃO
 with st.container():
     st.markdown(        
         """
-        <div class="container3">
-            <h3 lass=\"container-content\" style=\"color: #f09db1;\">
+        <div class="container2">
+            <h3 style=\"color: #ffffff; font-size: 30px\">
                 LOCALIZAÇÃO
             </h3>
             <p></p>
@@ -147,3 +147,114 @@ with st.container():
         """, 
         unsafe_allow_html=True
     )
+
+## PRESENTES
+with st.container():
+    st.markdown(
+        """
+        <div class="container3">
+            <h3 style=\"color: #f09db1; font-size: 30px\">
+                SUGESTÃO DE PRESENTE
+            </h3>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+
+    colShoes, colClothes, colToys = st.columns(3, gap='small', vertical_alignment='center', border=True)
+    
+    ## PRESENTE 1
+    with colShoes:
+        shoesFile = open("images/shoes.gif", "rb")
+        shoesContent = shoesFile.read()
+        shoesImg = base64.b64encode(shoesContent).decode("utf-8")
+        shoesFile.close()
+        st.markdown(
+            """
+            <style>
+                img {
+                    border-radius: 15px;
+                }
+            </style>
+            """, unsafe_allow_html=True
+        )
+        st.markdown(
+            f'<img src="data:image/gif;base64,{shoesImg}">',
+            unsafe_allow_html=True,
+        )
+
+    ## PRESENTE 2
+    with colClothes:
+        cloFile = open("images/clothes.gif", "rb")
+        cloContent = cloFile.read()
+        cloImg = base64.b64encode(cloContent).decode("utf-8")
+        cloFile.close()
+        st.markdown(
+            """
+            <style>
+                img {
+                    border-radius: 15px;
+                }
+            </style>
+            """, unsafe_allow_html=True
+        )
+        st.markdown(
+            f'<img src="data:image/gif;base64,{cloImg}">',
+            unsafe_allow_html=True,
+        )   
+
+    ## PRESENTE 3
+    with colToys:
+        toyFile = open("images/toys.gif", "rb")
+        toyContent = toyFile.read()
+        toyImg = base64.b64encode(toyContent).decode("utf-8")
+        toyFile.close()
+        st.markdown(
+            """
+            <style>
+                img {
+                    border-radius: 15px;
+                }
+            </style>
+            """, unsafe_allow_html=True
+        )
+        st.markdown(
+            f'<img src="data:image/gif;base64,{toyImg}">',
+            unsafe_allow_html=True,
+        )
+    
+with st.container():
+    col1, col3 = st.columns(2, vertical_alignment='center', border=True)
+    with col1:
+        st.markdown(
+            """
+            <div class="container4">
+                <b><h3 style=\"color: #f09db1; font-size: 30px\">
+                    INFORMAÇÕES GERAIS
+                </h3></b>
+                <h6>DATA</h6>
+                    <p>Sábado, 11 de Janeiro de 2024</p>
+                <h6>HORÁRIO</h6>
+                    <p \"padding: 0px;\">Início às 18h00 e encerramento às 22h00</p>
+                <h6>ENDEREÇO</h6>
+                    <p>Magic fest Buffet, R. Antônio Cirilino, 62 - Abolição, Mossoró - RN, 59619-630</p>
+                <br>
+            </div>
+            """, 
+            unsafe_allow_html=True
+        )
+    
+    with col3:
+        st.markdown(
+            """
+            <div class="container4">
+                <h3></h3>
+                <h6>CONTATO DOS PAPAIS</h6>
+                <p>(84) 9 8629-8159 - Roxanna
+                <br>(84) 9 8629-7626 - Lucas</p>
+            </div>
+            <br><br><br><br><br><br>
+            """, 
+            unsafe_allow_html=True
+        )
+    
